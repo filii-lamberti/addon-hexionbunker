@@ -63,3 +63,8 @@ typings/
 
 # next.js build output
 .next
+
+# local options.json file
+options.json
+
+\.vscode/
