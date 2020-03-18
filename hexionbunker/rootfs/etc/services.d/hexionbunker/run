@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Filii LambertiHome Assistant Add-ons: HexionBunker
+# Starts the HexionBunker status page
+# ==============================================================================
+
+# Set the current working dir to /opt
+cd /opt/hexionbunker || bashio::exit.nok "Could not change directory to HexionBunker"
+
+bashio::log.info "Starting HexionBunker..."
+
+# And finally start the HexionBunker
+exec node app.js

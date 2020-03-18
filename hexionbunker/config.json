@@ -1,0 +1,26 @@
+{
+  "name": "Bunker",
+  "version": "2.0.0",
+  "slug": "bunker",
+  "description": "A bunker add-on for Home Assistant!",
+  "url": "https://gitlab.com/filii-lamberti/filii-addons/tree/master/bunker-addon",
+  "startup": "application",
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armhf",
+    "armv7",
+    "i386"
+  ],
+  "boot": "auto",
+  "hassio_api": true,
+  "homeassistant_api": true,
+  "ports": {
+    "3000/tcp": 8213
+  },
+  "options": {},
+  "schema": {
+    "logging": "bool?",
+    "debugging": "bool?"
+  }
+}
