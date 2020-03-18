@@ -13,13 +13,12 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         g++=9.2.0-r3 \
         make=4.2.1-r2 \
-        python2=2.7.16-r3 \
-    \
-    && apk add --no-cache \
-        nodejs=12.15.0-r1 \
-        npm=12.15.0-r1 \
-    \
-    && cd /opt/bunker \
+        python2=2.7.16-r3
+
+# Copy root filesystem
+COPY rootfs /
+
+RUN cd /opt/bunker \
     \
     && npm install \
         --no-optional \
@@ -28,9 +27,6 @@ RUN \
     && npm cache clear --force \
     \
     && apk del --purge .build-dependencies
-
-# Copy root filesystem
-COPY rootfs /
 
 # Build arugments
 ARG BUILD_ARCH
