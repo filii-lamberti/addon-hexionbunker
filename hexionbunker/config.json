@@ -1,8 +1,8 @@
 {
   "name": "HexionBunker",
-  "version": "2.0.0",
+  "version": "4.0.0",
   "slug": "hexionbunker",
-  "description": "A HexionBunker add-on for Home Assistant!",
+  "description": "A HexionBunker add-on for Home Assistant",
   "url": "https://gitlab.com/filii-lamberti/addon-hexionbunker",
   "startup": "application",
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
