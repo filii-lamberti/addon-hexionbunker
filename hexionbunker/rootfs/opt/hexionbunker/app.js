@@ -5,10 +5,10 @@ const fs = require('fs');
 // from the add-on persistent data directory
 // that contains our configuration
 const options = JSON.parse(fs.readFileSync('/data/options.json', 'utf8'));
-/*const options = {
+/* const options = {
   logger: true,
   debugging: false,
-}*/
+} */
 
 // status of logging
 const { logging } = options;
@@ -59,10 +59,10 @@ const bunker = {
 
 function getData() {
   axios.get(bunker.url)
-    .then(response => {
+    .then((response) => {
       const html = response.data;
-      const $ = cheerio.load(html)
-      let newState = $('#accordion > h1').text().trim();
+      const $ = cheerio.load(html);
+      const newState = $('#accordion > h1').text().trim();
       if (newState !== bunker.state) {
         bunker.since = moment();
         bunker.state = newState;
@@ -71,10 +71,10 @@ function getData() {
       // after scrape
       io.emit('update', bunker);
 
-      console.log(bunker);
+      log(bunker);
     })
-    .catch(error => {
-      console.log(error);
+    .catch((error) => {
+      log(error);
     });
 }
 
