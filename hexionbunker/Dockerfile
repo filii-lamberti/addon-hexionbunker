@@ -6,7 +6,10 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Copy root filesystem
-COPY rootfs /
+COPY rootfs/etc /etc/
+COPY rootfs/opt/hexionbunker/package-lock.json \
+    rootfs/opt/hexionbunker/package.json \
+    /opt/hexionbunker/
 
 # Setup base
 # hadolint ignore=DL3003
@@ -28,6 +31,9 @@ RUN \
     && npm cache clear --force \
     \
     && apk del --no-cache --purge .build-dependencies
+
+COPY rootfs/opt/hexionbunker/public /opt/hexionbunker/public/
+COPY rootfs/opt/hexionbunker/app.js /opt/hexionbunker/
 
 # Build arugments
 ARG BUILD_ARCH
