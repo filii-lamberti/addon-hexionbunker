@@ -1,6 +1,6 @@
 {
   "name": "HexionBunker",
-  "version": "4.0.0",
+  "version": "dev",
   "slug": "hexionbunker",
   "description": "A HexionBunker add-on for Home Assistant",
   "url": "https://gitlab.com/filii-lamberti/addon-hexionbunker",
