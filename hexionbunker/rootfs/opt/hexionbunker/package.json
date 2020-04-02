@@ -1,24 +1,20 @@
 {
-	"name": "isdebunkeropen",
-	"version": "2.0.0",
-	"description": "Node.js app voor isdebunkeropen.be",
-	"author": "Filii Lamberti",
-	"main": "app.js",
-	"scripts": {
-		"start": "node app.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"dependencies": {
-		"axios": "^0.19.2",
-		"cheerio": "^1.0.0-rc.3",
-		"express": "^4.17.1",
-		"moment": "^2.24.0",
-		"socket.io": "^2.3.0"
-	},
-	"license": "MIT",
-	"devDependencies": {
-		"eslint": "^6.8.0",
-		"eslint-config-airbnb-base": "^14.1.0",
-		"eslint-plugin-import": "^2.20.1"
-	}
+  "name": "hexionbunker",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://gitlab.com/filii-lamberti/addon-hexionbunker",
+  "author": "Filii Lamberti",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
 }
