@@ -7,8 +7,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Copy root filesystem
 COPY rootfs/etc /etc/
-COPY rootfs/opt/hexionbunker/package-lock.json \
+COPY \
     rootfs/opt/hexionbunker/package.json \
+    rootfs/opt/hexionbunker/yarn.lock \
     /opt/hexionbunker/
 
 # Setup base
@@ -23,11 +24,17 @@ RUN \
     \
     && cd /opt/hexionbunker \
     \
-    && npm install \
-        --no-optional \
-        --only=production \
+    && yarn global add modclean \
+    && yarn --production \
     \
-    && npm cache clear --force \
+    && modclean \
+        --path /opt/hexionbunker \
+        --no-progress \
+        --keep-empty \
+        --run \
+    \
+    && yarn global remove modclean \
+    && yarn cache clean \
     \
     && apk del --no-cache --purge .build-dependencies
 
