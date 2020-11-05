@@ -17,7 +17,7 @@ COPY \
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         npm=12.18.4-r0 \
-        yarn=1.19.2-r0 \
+        yarn=1.22.4-r0 \
     \
     && apk add --no-cache \
         nodejs=12.15.0-r1 \
