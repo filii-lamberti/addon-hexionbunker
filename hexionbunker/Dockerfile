@@ -20,7 +20,7 @@ RUN \
         yarn=1.22.4-r0 \
     \
     && apk add --no-cache \
-        nodejs=12.18.4-r0 \
+        nodejs=14.18.1-r0 \
     \
     && cd /opt/hexionbunker \
     \
