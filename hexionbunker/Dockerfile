@@ -16,7 +16,7 @@ COPY \
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        npm=12.18.4-r0 \
+        npm=7.17.0-r0 \
         yarn=1.22.4-r0 \
     \
     && apk add --no-cache \
