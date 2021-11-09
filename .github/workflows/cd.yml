@@ -1,0 +1,12 @@
+name: Continuous deployment
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags: [v*]
+
+jobs:
+  continuous-deployment:
+    uses: filii-lamberti/repository/.github/workflows/cd.yml@main
+    with:
+      addon: hexionbunker

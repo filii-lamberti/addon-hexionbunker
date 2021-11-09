@@ -1,17 +1,10 @@
 version: 2
 updates:
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 10
-- package-ecosystem: npm
-  directory: "/hexionbunker/rootfs/opt/hexionbunker"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 10
 - package-ecosystem: docker
   directory: "/hexionbunker"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
+- package-ecosystem: npm
+  directory: "/hexionbunker/rootfs/opt/hexionbunker"
+  schedule:
+    interval: daily

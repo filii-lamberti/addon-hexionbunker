@@ -1,0 +1,13 @@
+name: Continuous integration
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  continuous-integration:
+    uses: filii-lamberti/repository/.github/workflows/ci.yml@main
+    with:
+      addon: hexionbunker
