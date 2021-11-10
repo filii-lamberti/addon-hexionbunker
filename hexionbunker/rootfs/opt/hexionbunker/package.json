@@ -1,7 +1,7 @@
 {
   "name": "hexionbunker",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "repository": "https://gitlab.com/filii-lamberti/addon-hexionbunker",
   "author": "Filii Lamberti",
   "license": "MIT",

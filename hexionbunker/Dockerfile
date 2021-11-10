@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:8.0.5
+ARG BUILD_FROM=hassioaddons/base:10.2.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 COPY rootfs/etc /etc/
 COPY \
     rootfs/opt/hexionbunker/package.json \
-    rootfs/opt/hexionbunker/yarn.lock \
+    rootfs/opt/hexionbunker/package-lock.json \
     /opt/hexionbunker/
 
 # Setup base
@@ -17,29 +17,20 @@ COPY \
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         npm=7.17.0-r0 \
-        yarn=1.22.4-r0 \
     \
     && apk add --no-cache \
         nodejs=14.18.1-r0 \
     \
     && cd /opt/hexionbunker \
     \
-    && yarn global add modclean \
-    && yarn --production \
+    && npm install --production \
     \
-    && modclean \
-        --path /opt/hexionbunker \
-        --no-progress \
-        --keep-empty \
-        --run \
-    \
-    && yarn global remove modclean \
-    && yarn cache clean \
+    && npx mod-pruner prune --force \
     \
     && apk del --no-cache --purge .build-dependencies
 
 COPY rootfs/opt/hexionbunker/public /opt/hexionbunker/public/
-COPY rootfs/opt/hexionbunker/app.js /opt/hexionbunker/
+COPY rootfs/opt/hexionbunker/index.js /opt/hexionbunker/
 
 # Build arugments
 ARG BUILD_ARCH

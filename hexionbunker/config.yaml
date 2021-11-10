@@ -14,8 +14,7 @@ arch:
 hassio_api: true
 homeassistant_api: true
 ports:
-  3000/tcp: 8213
-options:
+  3000/tcp: 8012 # hexionbunker
 schema:
   logging: bool?
   debugging: bool?
