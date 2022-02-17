@@ -8,7 +8,7 @@
   "dependencies": {
     "axios": "^0.26.0",
     "cheerio": "^1.0.0-rc.10",
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "moment": "^2.29.1",
     "socket.io": "^2.4.0"
   },
